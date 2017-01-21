@@ -1,36 +1,40 @@
 //server will live here
 
-let connect = require('connect');
+//create a reference to the express module, store a pointer to the express module
+let express = require('express');
 
-let app = connect();
+//create a instance of the express server
+let app = express();
 
 const port = 3000;
 
 app.listen(port);
-console.log('server running at http://localhost:3000/');
+console.log('server listening at http://localhost/$(port)');
+
+app.use(express.static('COMP308-Lab1'))
 
 //routing
 
-//third route is '/contact'
-app.use('/contact', (req, res, next) => {
+//third route is '/contact' change to use if nodemon
+app.get('/contact', (req, res, next) => {
     res.setHeader('Context-Type', 'text/plain');
-    res.end("this is the contact page");
-
+    //res.end("this is the contact page");
+    res.send("this is the express contact page");
     next();
 });
 
 //second route is '/about'
-app.use('/about', (req, res, next) => {
+app.get('/about', (req, res, next) => {
     res.setHeader('Context-Type', 'text/plain');
-    res.end("this is the about page");
+    res.send("this is the express about page");
 
     next();
 });
 
 //first route is, root of my website
-app.use('/', (req, res, next) => {
+app.get('/', (req, res, next) => {
     res.setHeader('Context-Type', 'text/plain');
-    res.end("welcome to root page!");
+    res.send("welcome to expres root page!");
 
     next();
 });

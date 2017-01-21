@@ -11,7 +11,8 @@ const port = 3000;
 app.listen(port);
 console.log('server listening at http://localhost/$(port)');
 
-app.use(express.static('COMP308-Lab1'))
+//app.use(express.static('COMP308-Lab1'))
+app.use('/', express.static('COMP308-Lab1'))
 
 //routing
 

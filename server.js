@@ -15,7 +15,7 @@ console.log('server listening at http://localhost/$(port)');
 
 //app.use(express.static('COMP308-Lab1'))
 //app.use('/', express.static('COMP308-Lab1'))
-app.use(express.static(path.join(html_Folder, 'root.html')));
+app.use(express.static(path.join(__dirname, 'html_Folder')));
 
 //routing
 
@@ -38,7 +38,7 @@ app.get('/about', (req, res, next) => {
 //first route is, root of my website
 app.get('/', (req, res, next) => {
     res.setHeader('Context-Type', 'text/plain');
-    res.send("welcome to expres root page!");
+    //res.send("welcome to expres root page!");
 
     next();
 });

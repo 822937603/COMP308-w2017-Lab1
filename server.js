@@ -15,7 +15,7 @@ console.log('server listening at http://localhost/$(port)');
 
 //app.use(express.static('COMP308-Lab1'))
 //app.use('/', express.static('COMP308-Lab1'))
-app.use(express.static(path.join(__dirname, 'html_folder')));
+app.use(express.static(path.join(html_Folder, 'root.html')));
 
 //routing
 

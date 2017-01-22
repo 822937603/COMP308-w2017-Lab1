@@ -44,6 +44,6 @@ app.get('/about', (req, res, next) => {
 app.get('/', (req, res, next) => {
     res.setHeader('Context-Type', 'text/plain');
     //res.send("welcome to express root page!");
-
+    res.sendfile(__dirname + '/root.html');
     next();
 });

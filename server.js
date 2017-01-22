@@ -10,12 +10,17 @@ let path = require('path');
 
 const port = 3000;
 
+app.configure(function(){
+  app.use('/html_Folder', express.static(__dirname + '/html_Folder'));
+  //app.use(express.static(__dirname + '/public'));
+});
+
 app.listen(port);
 console.log('server listening at http://localhost/$(port)');
 
 //app.use(express.static('COMP308-Lab1'))
 //app.use('/', express.static('COMP308-Lab1'))
-app.use('/html_Folder',express.static(path.join(__dirname, 'html_Folder')));
+//app.use('/html_Folder',express.static(path.join(__dirname, 'html_Folder')));
 
 //routing
 

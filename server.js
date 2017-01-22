@@ -6,7 +6,7 @@ let express = require('express');
 //create a instance of the express server
 let app = express();
 
-var path = require('path');
+let path = require('path');
 
 const port = 3000;
 
@@ -15,7 +15,7 @@ console.log('server listening at http://localhost/$(port)');
 
 //app.use(express.static('COMP308-Lab1'))
 //app.use('/', express.static('COMP308-Lab1'))
-app.use(express.static(path.join(__dirname, 'root.html')));
+app.use(express.static(path.join(__dirname, 'html_folder')));
 
 //routing
 
